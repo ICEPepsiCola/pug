@@ -96,7 +96,7 @@ function App() {
                 <FormattedMessage id='Toggle Shape'/>
             </Button>
             {state === 'stop' && !IS_MOBILE ? <Button onClick={startRecording}><FormattedMessage id='Start Record'/></Button> : null}
-            {state === 'start' && !IS_MOBILE ? <Button onClick={stopRecording}>Stop Record</Button> : null}
+            {state === 'start' && !IS_MOBILE ? <Button onClick={stopRecording}><FormattedMessage id='Stop Record'/></Button> : null}
         </div>
         <div className='video-bg'>
             <div className='video-bg-close' onClick={_ => {
