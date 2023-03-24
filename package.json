@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "hover.css": "^2.3.2",
     "html-to-image": "^1.11.11",
     "html2canvas": "^1.4.1",

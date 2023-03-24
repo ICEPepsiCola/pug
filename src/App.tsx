@@ -7,6 +7,8 @@ import {toCanvas} from 'html-to-image';
 import {IntlProvider, FormattedMessage} from 'react-intl'
 import messages from './locales';
 import {debounce} from 'lodash';
+import Button from './components/button';
+import 'animate.css';
 
 async function capture() {
     return toCanvas(document.getElementById('glass-container')!!, {
@@ -90,11 +92,11 @@ function App() {
             <Number/>
         </div>
         <div className='record-btns'>
-            <button onClick={toggleShape}>
+            <Button onClick={toggleShape}>
                 <FormattedMessage id='Toggle Shape'/>
-            </button>
-            {state === 'stop' && !IS_MOBILE ? <button onClick={startRecording}><FormattedMessage id='Start Record'/></button> : null}
-            {state === 'start' && !IS_MOBILE ? <button onClick={stopRecording}>Stop Record</button> : null}
+            </Button>
+            {state === 'stop' && !IS_MOBILE ? <Button onClick={startRecording}><FormattedMessage id='Start Record'/></Button> : null}
+            {state === 'start' && !IS_MOBILE ? <Button onClick={stopRecording}>Stop Record</Button> : null}
         </div>
         <div className='video-bg'>
             <div className='video-bg-close' onClick={_ => {
@@ -102,11 +104,11 @@ function App() {
                 bg.style.display = 'none'
             }}><FormattedMessage id='Close'/>
             </div>
-            <video controls autoPlay playsInline id="preview-video"></video>
+            <video controls autoPlay playsInline id="preview-video" className='animate__animated animate__zoomIn'></video>
         </div>
         <canvas id='background-canvas' style={{position: 'absolute', top: '-9999px', left: '-9999px'}}></canvas>
         <div className="links">
-            <a href="https://github.com/ICEPepsiCola"><FormattedMessage id='By ICEPepsiCola'/></a>
+            <a href="https://github.com/ICEPepsiCola/pug"><FormattedMessage id='By ICEPepsiCola'/></a>
             <span className="divider">•</span>
             <a href="mailto:icepepsicola@foxmail.com"><FormattedMessage id='Contact Me'/></a>
             <span className="divider">•</span>
